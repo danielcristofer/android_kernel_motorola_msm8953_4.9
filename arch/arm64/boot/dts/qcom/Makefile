@@ -23,6 +23,57 @@ dtb-$(CONFIG_ARCH_SDM845) += sdm845-sim.dtb \
 	sdm845-v2.1-rb3.dtb \
 	sdm845-v2.1-mtp.dtb
 
+ifneq ($(CONFIG_MMI_DEVICE_DTBS),y)
+
+dtb-$(CONFIG_ARCH_MSM8953) += msm8953-sim.dtb \
+	msm8953-rumi.dtb \
+	msm8953-cdp.dtb \
+	msm8953-mtp.dtb \
+	msm8953-ext-codec-mtp.dtb \
+	msm8953-qrd-sku3.dtb \
+	msm8953-rcm.dtb \
+	apq8053-rcm.dtb \
+	msm8953-ext-codec-rcm.dtb \
+	apq8053-cdp.dtb \
+	apq8053-ipc.dtb \
+	msm8953-ipc.dtb \
+	apq8053-mtp.dtb \
+	apq8053-ext-audio-mtp.dtb \
+	apq8053-ext-codec-rcm.dtb \
+	apq8053-lite-dragon-v1.0.dtb \
+	apq8053-lite-dragon-v2.0.dtb \
+	apq8053-lite-ext-codec-dragon-v2.0.dtb \
+	msm8953-cdp-1200p.dtb \
+	msm8953-iot-mtp.dtb \
+	apq8053-iot-mtp.dtb \
+	msm8953-pmi8940-cdp.dtb \
+	msm8953-pmi8940-mtp.dtb \
+	msm8953-pmi8937-cdp.dtb \
+	msm8953-pmi8937-mtp.dtb \
+	msm8953-pmi8940-ext-codec-mtp.dtb \
+	msm8953-pmi8937-ext-codec-mtp.dtb
+
+dtb-$(CONFIG_ARCH_SDM450) += sdm450-rcm.dtb \
+	sdm450-cdp.dtb \
+	sdm450-mtp.dtb \
+	sdm450-qrd.dtb \
+	sdm450-pmi8940-mtp.dtb \
+	sdm450-pmi8937-mtp.dtb \
+	sdm450-iot-mtp.dtb \
+	sda450-cdp.dtb \
+	sda450-mtp.dtb
+
+ifeq ($(CONFIG_ALI_DTB),y)
+dtb-$(CONFIG_ARCH_SDM450) += sdm450-ali-evt1.dtb
+dtb-$(CONFIG_ARCH_SDM450) += sdm450-ali-dvt1a.dtb
+dtb-$(CONFIG_ARCH_SDM450) += sdm450-ali-dvt1b.dtb
+dtb-$(CONFIG_ARCH_SDM450) += sdm450-ali-dvt2.dtb
+dtb-$(CONFIG_ARCH_SDM450) += sdm450-ali-pvt1.dtb
+dtb-$(CONFIG_ARCH_SDM450) += sdm450-ali-pvt2.dtb
+endif
+
+endif # CONFIG_MMI_DEVICE_DTBS
+
 ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
 	dtbo-$(CONFIG_ARCH_SDM845) += \
 		sdm845-cdp-overlay.dtbo \
